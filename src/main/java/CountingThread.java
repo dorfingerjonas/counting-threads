@@ -1,10 +1,10 @@
 public class CountingThread extends Thread{
 
     private Counter counter;
-    private int maxCount;
+    private long maxCount;
     private String threadName;
 
-    public CountingThread(String threadName, Counter counter, int maxCount) {
+    public CountingThread(String threadName, Counter counter, long maxCount) {
         super(threadName);
         this.counter = counter;
         this.maxCount = maxCount;

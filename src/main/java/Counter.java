@@ -1,8 +1,8 @@
 public class Counter {
 
-    private int counter;
+    private long counter;
 
-    public int getCounter() {
+    public long getCounter() {
         return counter;
     }
 
@@ -10,7 +10,7 @@ public class Counter {
         counter++;
     }
 
-    public void init(int startValue) {
+    public void init(long startValue) {
         counter = startValue;
     }
 }
