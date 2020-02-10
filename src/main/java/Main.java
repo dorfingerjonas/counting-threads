@@ -9,6 +9,8 @@ public class Main {
         testCounterThreads("Counter unprotected", counter);
         counter = new BusyWaitingCounter();
         testCounterThreads("Busy waiting Counter", counter);
+        counter = new SynchronizedCounter();
+        testCounterThreads("synchronized Counter", counter);
     }
 
     private static void testCounterThreads(String name, CounterInterface counter) throws InterruptedException {
