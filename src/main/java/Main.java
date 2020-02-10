@@ -4,9 +4,11 @@ public class Main {
     final static int NR_THREADS = 3;
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("Counting Threads example");
-        Counter counter = new Counter();
+        System.out.println("Counting Threads example\n");
+        CounterInterface counter = new Counter();
         testCounterThreads("Counter unprotected", counter);
+        counter = new BusyWaitingCounter();
+        testCounterThreads("Busy waiting Counter", counter);
     }
 
     private static void testCounterThreads(String name, CounterInterface counter) throws InterruptedException {
@@ -24,7 +26,8 @@ public class Main {
 
         long stopTime = System.currentTimeMillis();
         long timeElapsed = stopTime - startTime;
-        System.out.printf("Result: %,d \tDiff: %,d \tTime: %,d ms\n",
+        System.out.printf("%s: Result: %,d \tDiff: %,d \tTime: %,d ms\n",
+                name,
                 counter.getCounter(),
                 (MAX_VALUE - counter.getCounter()),
                 timeElapsed);
