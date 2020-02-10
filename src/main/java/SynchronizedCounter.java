@@ -1,4 +1,4 @@
-public class synchronizedCounter implements CounterInterface {
+public class SynchronizedCounter implements CounterInterface {
 
     private long counter = 0;
 
