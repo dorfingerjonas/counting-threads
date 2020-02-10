@@ -4,7 +4,9 @@ public class SynchronizedCounter implements CounterInterface {
 
     @Override
     public synchronized void increment() {
-        counter++;
+        synchronized (this) {
+            counter++;
+        }
     }
 
     @Override
