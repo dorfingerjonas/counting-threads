@@ -1,16 +1,19 @@
-public class Counter {
+public class Counter implements CounterInterface {
 
-    private long counter;
+    private long counter = 0;
 
-    public long getCounter() {
-        return counter;
-    }
-
+    @Override
     public void increment() {
         counter++;
     }
 
-    public void init(long startValue) {
-        counter = startValue;
+    @Override
+    public long getCounter() {
+        return counter;
+    }
+
+    @Override
+    public void init(long startvalue) {
+        counter = startvalue;
     }
 }
