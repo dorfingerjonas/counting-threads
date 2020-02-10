@@ -14,6 +14,9 @@ public class Main {
 
         counter = new SynchronizedCounter();
         testCounterThreads("synchronized Counter", counter);
+
+        counter = new AtomicCounter();
+        testCounterThreads("Atomic Counter", counter);
     }
 
     private static void testCounterThreads(String name, CounterInterface counter) throws InterruptedException {
