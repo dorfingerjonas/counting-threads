@@ -5,10 +5,13 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Counting Threads example\n");
+
         CounterInterface counter = new Counter();
         testCounterThreads("Counter unprotected", counter);
+
         counter = new BusyWaitingCounter();
         testCounterThreads("Busy waiting Counter", counter);
+
         counter = new SynchronizedCounter();
         testCounterThreads("synchronized Counter", counter);
     }
