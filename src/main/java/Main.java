@@ -13,10 +13,13 @@ public class Main {
         testCounterThreads("Busy waiting Counter", counter);
 
         counter = new SynchronizedCounter();
-        testCounterThreads("synchronized Counter", counter);
+        testCounterThreads("Synchronized Counter", counter);
 
         counter = new AtomicCounter();
         testCounterThreads("Atomic Counter", counter);
+
+        counter = new SemaphoreCounter();
+        testCounterThreads("Semaphore Counter", counter);
     }
 
     private static void testCounterThreads(String name, CounterInterface counter) throws InterruptedException {
